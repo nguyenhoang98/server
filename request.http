@@ -1,0 +1,215 @@
+POST http://localhost:5000/api/auth/register 
+Content-Type: application/json
+
+{
+  "userName" : "nvhoang" ,
+  "password" :  "nvhoang" ,
+  "email" :"nvhoang@gmail.com" , 
+  "haha" : "haha"
+}
+
+###
+POST http://localhost:5000/api/auth/login 
+Content-Type: application/json
+
+{
+  "userName" : "hieu123" ,
+  "password" :  "hieu123"
+}
+
+###
+GET http://localhost:5000/api/auth
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDlhOTI5NzUwOGM5MDhiZTBmNTc3NSIsImlhdCI6MTY0MTY1NTQ2NX0.OS7i9_ih7R7qarigUpm4hUWuCKFbZNwYDLjPuWiVvXo
+
+###
+GET http://localhost:5000/api/auth/list?userName=&contactNumber=&role=
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZWU2N2RlY2FjNGNiYWVjN2Q2MzE4YiIsImlhdCI6MTY0MzM0NDczM30.269P38F1XZxtCG8aWPd4ELTB1JnKhw-FxOl8symoiBo
+
+###
+DELETE http://localhost:5000/api/auth/delete/61f401243a9d62cfbf7f3002
+Content-Type: application/json 
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZWU2N2RlY2FjNGNiYWVjN2Q2MzE4YiIsImlhdCI6MTY0MzM0NDczM30.269P38F1XZxtCG8aWPd4ELTB1JnKhw-FxOl8symoiBo
+
+###
+PUT http://localhost:5000/api/auth/update/61f3fdb23a9d62cfbf7f2fc5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZWU2N2RlY2FjNGNiYWVjN2Q2MzE4YiIsImlhdCI6MTY0MzM0NDczM30.269P38F1XZxtCG8aWPd4ELTB1JnKhw-FxOl8symoiBo
+
+{
+      "userName": "sale3*",
+      "password" : "sale3",
+      "role": "user",
+      "contactNumber": "12345678",
+      "email": "sale3@gmail.com",
+      "profilePicture" :""
+    }
+###
+POST http://localhost:5000/api/product/create
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZWU3NGU3Y2EyODYyN2NlY2ZmYzE0MSIsImlhdCI6MTY0MzA4NTI3MX0.h0kCT3v7CNrHI_AAgvt9dQdUUh3-M3sobwG4RdM5hcM
+
+{
+  "title" : "Áo Phông" ,
+  "description" : "Chất lượng cao" ,
+  "price" : 50000 , 
+  "quantity" : 30 ,
+  "productAvatar" : [
+    "a" , "b" , "c" , "d" 
+  ] ,
+  "category" : "male"
+}
+
+
+###
+GET http://localhost:5000/api/product
+Content-Type: application/json 
+
+###
+DELETE http://localhost:5000/api/product/delete/61ef83f0a247eb6f959668ff
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZWU3NGU3Y2EyODYyN2NlY2ZmYzE0MSIsImlhdCI6MTY0MzA4NTI3MX0.h0kCT3v7CNrHI_AAgvt9dQdUUh3-M3sobwG4RdM5hcM
+
+###
+
+PUT http://localhost:5000/api/product/update/61f1103a8bee5f986a6cc1b8
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZWU3NGU3Y2EyODYyN2NlY2ZmYzE0MSIsImlhdCI6MTY0MzA4NTI3MX0.h0kCT3v7CNrHI_AAgvt9dQdUUh3-M3sobwG4RdM5hcM
+
+{
+    "title": "Áo khoác nữ",
+    "description": "Đẹp rẻ",
+    "price": 200000,
+    "quantity": 150,
+    "productAvatar": [
+        "https://vn-live-05.slatic.net/p/05308cd14ee0eaa375355e97e81bc6ad.jpg_720x720q80.jpg_.webp"
+    ],
+    "category": "female",
+}
+
+### cart 
+PUT http://localhost:5000/api/cart/add-to-cart/621b7028717510c308863ceb
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMWJiMTVjY2I3NmY4NDZjNjc3ZGZlMyIsImlhdCI6MTY0NTk4NjM1MX0.mOZG9Gx2Vw6WIfb1EWanfYtL2yM0nBR6h-XJ1kJ0QY4 
+
+{
+ "idProduct" : "61f1861d6df34165141f2812222" ,
+  "quantity" : 5
+}
+
+### get cart 
+
+GET http://localhost:5000/api/cart/get/621c02b1fe0c696ac96260aa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMWMwMmIxZmUwYzY5NmFjOTYyNjBhYSIsImlhdCI6MTY0NjAwMjkzMH0.GN8W65x7TmUk95ovzyr-3_1YDo7vhJWy8137pll_s3c
+
+
+##################### category
+
+POST  http://localhost:5000/api/category/create 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMWQzMTEwYjljMGIwN2I3MDRkNDM1ZiIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJE1HNTRDMDBUOUtqV0JIVXovUjJ2L2V3Rk81amt0bGRXTTVUbU1ISWhWTnFRVDJmS0x0czdHIiwiZW1haWwiOiJudmhvYW5nQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImNvbnRhY3ROdW1iZXIiOiIzNjI2MjE2MjciLCJjYXJ0IjpbeyJpZCI6IjYxZjE4NjFkNmRmMzQxNjUxNDFmMjgxMiIsInF1YW50aXR5IjoyfSx7ImlkIjoiNjFmOThlYjA1YjdmM2U0OWQ3Mzg3ODJiIiwicXVhbnRpdHkiOjJ9LHsiaWQiOiI2MWY5OGIyZjViN2YzZTQ5ZDczODc4MjQiLCJxdWFudGl0eSI6MX0seyJpZCI6IjYxZjk4ZWYxNWI3ZjNlNDlkNzM4NzgzMyIsInF1YW50aXR5IjoxfSx7ImlkIjoiNjFmYmVjMjI0ZWFmNmI5MzFjZTU2YTM0IiwicXVhbnRpdHkiOjF9LHsiaWQiOiI2MWY5OTE4YzViN2YzZTQ5ZDczODc4NDMiLCJxdWFudGl0eSI6MX0seyJpZCI6IjYxZjk4ZjIzNWI3ZjNlNDlkNzM4NzgzNyIsInF1YW50aXR5IjoxfV0sImNyZWF0ZWRBdCI6IjIwMjItMDItMjhUMjA6MzE6MTIuMjE4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDItMjhUMjI6NDc6MTYuNzkxWiIsIl9fdiI6MH0sImlhdCI6MTY0NjE2MjA1NiwiZXhwIjoxNjQ2MTY1NjU2fQ.Ay5NUZurGioxuzkv60nXgHnFNNifsNsdqLwN_YHPFII
+
+{
+  "name" : "Áo rẻ" ,
+  "value":"children",
+  "parentId" :"621e780a44fe138eba2a8d71"
+}
+
+###
+GET  http://localhost:5000/api/category/get 
+Content-Type: application/json
+
+
+
+### cart
+
+POST http://localhost:5000/api/cart/add-to-cart
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3MjAwMzIzLCJleHAiOjE2NDcyMDM5MjN9.JllCcDnuvteOZKOVESnhfFnl-vulTGHSTrKsIT_augg
+
+{
+  "id" : "622a4545fd20fb4211f817d3" ,
+  "quantity" : 1 ,
+  "color" : "Đen" ,
+  "size" : 40 ,
+  "price" : 200000
+}
+
+###
+GET http://localhost:5000/api/cart/get-cart
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3MjAwMzIzLCJleHAiOjE2NDcyMDM5MjN9.JllCcDnuvteOZKOVESnhfFnl-vulTGHSTrKsIT_augg
+
+
+### 
+DELETE http://localhost:5000/api/cart/delete-to-cart/622bd1da45620724885f37a5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3MjAwMzIzLCJleHAiOjE2NDcyMDM5MjN9.JllCcDnuvteOZKOVESnhfFnl-vulTGHSTrKsIT_augg
+
+
+###
+GET http://localhost:5000/api/product?keyword=áo
+Content-Type: application/json
+
+
+###
+POST http://localhost:5000/api/product/rating/622a4485fd20fb4211f8178b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3NTMzOTg0LCJleHAiOjE2NDc1Mzc1ODR9.vLh08q-RDO6n-xEKtOHBFGrvV2NkTPG58714vieFjVM
+
+{
+  "rating" : 5
+}
+
+### comment 
+GET http://localhost:5000/api/comment/get/6232797f344e05180cf77384
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3NjYyMzE3LCJleHAiOjE2NDc2NjU5MTd9.yG-Ri8RJmh-GT0ZOqFVY0DzsiCTOh46gZANzZe0ymO0
+
+###
+POST http://localhost:5000/api/comment/post/6232797f344e05180cf77384
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3NjYyMzE3LCJleHAiOjE2NDc2NjU5MTd9.yG-Ri8RJmh-GT0ZOqFVY0DzsiCTOh46gZANzZe0ymO0
+
+{
+  "comment" : "helllo"
+}
+
+###
+DELETE http://localhost:5000/api/comment/delete/6235554412306d3f170dccbb
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3NjYyMzE3LCJleHAiOjE2NDc2NjU5MTd9.yG-Ri8RJmh-GT0ZOqFVY0DzsiCTOh46gZANzZe0ymO0
+
+
+###
+
+PUt http://localhost:5000/api/comment/update/6234c2cb9857c146bb43f0c6/6232797f344e05180cf77384
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3NjYyMzE3LCJleHAiOjE2NDc2NjU5MTd9.yG-Ri8RJmh-GT0ZOqFVY0DzsiCTOh46gZANzZe0ymO0
+
+{
+  "comment" : "comment update"
+}
+
+### option 
+
+GET http://localhost:5000/api/option/address/provinces 
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3NzUxNTk3LCJleHAiOjE2NDc3NTUxOTd9.QTnKrZZsbaIqURcYAYHtTyJSCRCajit85LqOl3b-cxQ
+
+###
+GET http://localhost:5000/api/option/address/districts/01
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3NzUxNTk3LCJleHAiOjE2NDc3NTUxOTd9.QTnKrZZsbaIqURcYAYHtTyJSCRCajit85LqOl3b-cxQ
+
+###
+GET http://localhost:5000/api/option/address/wards/001
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMmNiMjU1OTNjMTQwZWFhZGUzYTNmZSIsInVzZXJOYW1lIjoibnZob2FuZyIsInBhc3N3b3JkIjoiJDJiJDEwJEE2Ri80QkFRSEFZWEwxN01kVm5xaE9HdE54VzdIVlova0FvNFRtaDd0WWpwZGN3OVZ2M0JPIiwiZW1haWwiOiJuZ3V5ZW52YW5ob2FuZ2dAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiaXhkZmtqbS9pbWFnZS91cGxvYWQvdjE2NDcwOTY0MDQvcHd4bGVhaWJ0bHdkbGMwbmF3aWkuanBnIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMlQxNDo0Njo0NS4zNjlaIiwiX192IjowfSwiaWF0IjoxNjQ3NzUxNTk3LCJleHAiOjE2NDc3NTUxOTd9.QTnKrZZsbaIqURcYAYHtTyJSCRCajit85LqOl3b-cxQ
+
+###
+GET http://localhost:5000/api/order/get
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyMzM1ZjBlZjdhNzBhMGQxMjM3MjM3NSIsInVzZXJOYW1lIjoiaGlldTEyMyIsInBhc3N3b3JkIjoiJDJiJDEwJDZGMXFXdHFPajQ4dExhZVoyNWw2cS50VGw1YW1vODVFRXNyWnJ4OTZNNnZ2bWFOLzlIanZpIiwiZW1haWwiOiJoaWV1MTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiY29udGFjdE51bWJlciI6IjAzNjI2MjE2MjciLCJwcm9maWxlUGljdHVyZSI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xN1QxNjoxNzoxOC40MTlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xN1QxNjoxNzoxOC40MTlaIiwiX192IjowfSwiaWF0IjoxNjQ3Nzc2OTk0LCJleHAiOjE2NDc3ODA1OTR9.0UB9W8Vhtuo5YJ_vT0hNENnRyWwquZ98yNgz_EN5ozA
